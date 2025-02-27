@@ -23,4 +23,4 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_API_MODEL: "gpt-4-1106-preview"
           EXCLUDE_FILES: "dist/**, **/*.json, **/*.md, **/*.js"
-          MAX_ALLOWED_LINES: 2
+          MAX_ALLOWED_LINES: 200
