@@ -9,6 +9,9 @@ permissions: write-all
 jobs:
   review:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+      ACTIONS_STEP_DEBUG: true
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
