@@ -11,9 +11,6 @@ permissions: write-all
 jobs:
   review:
     runs-on: ubuntu-latest
-    env:
-      ACTIONS_RUNNER_DEBUG: true
-      ACTIONS_STEP_DEBUG: true
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -26,3 +23,4 @@ jobs:
           OPENAI_API_MODEL: "gpt-4-1106-preview"
           EXCLUDE_FILES: "dist/**, **/*.json, **/*.md, **/*.js"
           MAX_ALLOWED_LINES: 200
+          MAX_RETURNED_COMMENTS: 10
