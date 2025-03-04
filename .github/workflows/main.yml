@@ -2,20 +2,20 @@ name: AI Code Reviewer
 
 on:
   pull_request:
-    types:
-      - opened
-      - synchronize
+    types: [opened, synchronize, reopened, edited]
+
   workflow_dispatch:
 
 permissions: write-all
 jobs:
   review:
+    if: startsWith(github.event.pull_request.title, '[AI REVIEW]')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: AI Code Review Action
+      - name: AI Code Review
         uses: ming8525/ai-code-reviewer@develop
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
