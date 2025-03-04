@@ -4,12 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, edited]
 
-  workflow_dispatch:
-
 permissions: write-all
 jobs:
   review:
-    if: startsWith(github.event.pull_request.title, '[AI REVIEW]')
+    if: github.event.pull_request && startsWith(github.event.pull_request.title, '[AI REVIEW]')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
