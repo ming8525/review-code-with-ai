@@ -22,10 +22,10 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_API_MODEL: "gpt-4"
+          OPENAI_API_MODEL: "gpt-4-preview"
           USE_AZURE: true
-          AZURE_ENDPOINT: "https://ist-apim-aoai.azure-api.net/load-balancing"
-          AZURE_API_VERSION: "2024-06-01"
+          AZURE_ENDPOINT: "https://ist-apim-aoai.azure-api.net/load-balancing/gpt-4-preview"
+          AZURE_API_VERSION: "2025-02-01-preview"
           EXCLUDE_FILES: "dist/**, **/*.json, **/*.md, **/*.js"
           MAX_ALLOWED_LINES: 200
           MAX_RETURNED_COMMENTS: 10
